@@ -8,7 +8,7 @@ class Connection // Classe para conexão com o banco de dados;
 	{
 		try {
 			$conn = new \PDO(
-				'mysql:host=localhost;dbname=mvc', // Banco de dados
+				'mysql:host=localhost;dbname=login', // Banco de dados
 				'root', // Usuário
 				'root'  // Senha
 			); // Conexão via PDO
