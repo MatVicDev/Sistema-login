@@ -45,12 +45,13 @@ class Usuario extends Model
 		return $valido;
 	}
 
-	// Verificar se o email já foi cadastrado
-	public function getEmailUsuario()
+	// Verificar se o email ou o nome já foi cadastrado
+	public function getInfoUsuario()
 	{
-		$query = 'SELECT nome, email FROM tb_usuarios WHERE email = :EMAIL';
+		$query = 'SELECT nome, email FROM tb_usuarios WHERE email = :EMAIL OR nome = :NOME';
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':EMAIL', $this->__get('email'));
+		$stmt->bindValue(':NOME', $this->__get('nome'));
 		$stmt->execute();
 
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);

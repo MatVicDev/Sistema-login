@@ -33,7 +33,7 @@ class IndexController extends Action // Extendendo de uma classe abstrata
 		$usuario->__set('email', $_POST['email']);
 		$usuario->__set('senha', md5($_POST['senha1']));
 
-		if($usuario->validarCadastro() && count($usuario->getEmailUsuario()) == 0 && $senhas_iguais) {
+		if($usuario->validarCadastro() && count($usuario->getInfoUsuario()) == 0 && $senhas_iguais) {
 
 			$usuario->salvar();
 			header('Location: /');
