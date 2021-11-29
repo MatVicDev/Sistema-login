@@ -11,11 +11,11 @@ abstract class Action
 		$this->view = new \stdClass(); // Criando um objeto padrão
 	}
 
-	protected function render($view, $layout) // Método para retornar uma view
+	protected function render($view) // Método para retornar uma view
 	{
 		$this->view->page = $view;
-		if(file_exists("../App/Views/".$layout.".phtml"))
-			require_once "../App/Views/".$layout.".phtml";
+		if(file_exists("../App/Views/layout.phtml"))
+			require_once "../App/Views/layout.phtml";
 		else
 			$this->content();
 	}

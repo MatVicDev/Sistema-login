@@ -12,7 +12,7 @@ class indexController extends Action // Extendendo de uma classe abstrata
 {
 	public function index()
 	{
-		$this->render('index', 'layout1');
+		$this->render('index');
 	}	
 }
 ?>
