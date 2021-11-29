@@ -14,6 +14,12 @@ class Route extends Bootstrap
 			'action' => 'index' 				// Ação que vai ocorrer quando a rota for acionada
 		);
 
+		$route['cadastre-se'] = array(
+			'route' => '/cadastre-se',
+			'controller' => 'IndexController',
+			'action' => 'cadastrar'
+		);
+
 		$this->setRoutes($route);
 	}
 }
