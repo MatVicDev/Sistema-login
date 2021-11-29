@@ -4,7 +4,7 @@
 		
 
 		<!-- Start Sign In Form -->
-		<form class="fh5co-form animate-box" data-animate-effect="fadeIn">
+		<form action="/autenticar" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeIn">
 			<h2>Entre</h2>
 			<div class="form-group">
 				<label for="username" class="sr-only">Email</label>
@@ -20,6 +20,12 @@
 			<div class="form-group">
 				<p>Não é registado? <a href="/cadastre-se">Cadadtre-se</a></p>
 			</div>
+
+			<?php if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
+			<div>
+				<small class="text text-danger">*E-mail e/ou senha incorreto(s)</small>
+			</div>
+			<?php } ?>
 
 			<div class="form-group">
 				<input type="submit" value="Entrar" class="btn btn-primary">
